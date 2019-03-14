@@ -1,13 +1,16 @@
 package com.retail.services;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.retail.exceptions.ErrorCodes;
 import com.retail.exceptions.RetailException;
@@ -23,7 +26,9 @@ public final class ProductsService {
 
 	private static final Logger logger = LoggerFactory.getLogger(ProductsService.class);
 
-	private Map<String, List<Product>> productData = null;
+	private Map<String, Product> productData = null;
+
+	private Properties salesTaxConfig = null;
 
 	private static ProductsService productsService = null;
 
@@ -43,8 +48,14 @@ public final class ProductsService {
 	public void loadProducts() throws RetailException {
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			productData = (Map<String, List<Product>>) objectMapper.readValue(
-					Thread.currentThread().getContextClassLoader().getResourceAsStream("products.json"), Product.class);
+			productData = (Map<String, Product>) objectMapper.readValue(
+					Thread.currentThread().getContextClassLoader().getResourceAsStream("products.json"),
+					new TypeReference<HashMap<String, Product>>() {
+					});
+			// load properties file
+			salesTaxConfig = new Properties();
+			salesTaxConfig.load(
+					Thread.currentThread().getContextClassLoader().getResourceAsStream("sales_tax_entries.properties"));
 		} catch (IOException e) {
 			logger.error("There was an exception trying to upoad product data {}", e);
 			throw new RetailException(ErrorCodes.ERR_PRODUCT_DATA_LOAD_ERROR);
@@ -61,13 +72,20 @@ public final class ProductsService {
 	public Product getProductDetails(String barCode) throws RetailException {
 		Product product = null;
 		if (Objects.isNull(barCode)) {
-			throw new RetailException(ErrorCodes.ERR_PRODUCT_DATA_LOAD_ERROR);
+			logger.error("Product code to be looked up cannot be null..");
+			throw new RetailException(ErrorCodes.ERR_PRODUCT_INVALID_PRODUCT_CODE_ERROR);
 		}
 		if (Objects.nonNull(productData) && !productData.isEmpty()) {
-
+			product = productData.get(barCode);
 		}
 		return product;
+	}
 
+	/**
+	 * @return the salesTaxConfig
+	 */
+	public Properties getSalesTaxConfig() {
+		return salesTaxConfig;
 	}
 
 }
