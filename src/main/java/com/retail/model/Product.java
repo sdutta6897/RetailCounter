@@ -8,24 +8,9 @@ import java.math.BigDecimal;
  */
 public class Product {
 
-	private String productCode;
+	private String productCategory;
 	private BigDecimal productPrice;
 	private String productDescription;
-
-	/**
-	 * @return the productCode
-	 */
-	public String getProductCode() {
-		return productCode;
-	}
-
-	/**
-	 * @param productCode
-	 *            the productCode to set
-	 */
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
 
 	/**
 	 * @return the productPrice
@@ -55,6 +40,21 @@ public class Product {
 	 */
 	public void setProductDescription(String productDescription) {
 		this.productDescription = productDescription;
+	}
+
+	/**
+	 * @return the productCategory
+	 */
+	public String getProductCategory() {
+		return productCategory;
+	}
+
+	/**
+	 * @param productCategory
+	 *            the productCategory to set
+	 */
+	public void setProductCategory(String productCategory) {
+		this.productCategory = productCategory;
 	}
 
 }

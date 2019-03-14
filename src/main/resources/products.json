@@ -1,54 +1,17 @@
 {
-	"CategoryA": [
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		},
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		},
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		}
-	],
-	
-	"CategoryB": [
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		},
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		},
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		}
-	],
-	"CategoryC": [
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		},
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		},
-		{
-			"product-code": "A1234",
-			"product-descrption": "Apparel",
-			"product-price": "1000"
-		}
-	]
+	"1": {
+		"productDescription": "Apparel",
+		"productPrice": "1000",
+		"productCategory": "A"
+	},
+	"2": {
+		"productDescription": "Apparel",
+		"productPrice": "1000",
+		"productCategory": "B"
+	},
+	"3": {
+		"productDescription": "Apparel",
+		"productPrice": "1000",
+		"productCategory": "C"
+	}
 }

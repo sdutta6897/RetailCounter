@@ -7,7 +7,9 @@ package com.retail.exceptions;
  */
 public enum ErrorCodes {
 
-	ERR_PRODUCT_DATA_LOAD_ERROR("There was an error while trying to load the application", Severity.FATAL);
+	ERR_PRODUCT_DATA_LOAD_ERROR("There was an error while trying to load the application", Severity.FATAL),
+	ERR_PRODUCT_NOT_FOUND_ERROR("Product could not be looked up. Enter manually", Severity.FATAL),
+	ERR_PRODUCT_INVALID_PRODUCT_CODE_ERROR("Product code doesnot look good", Severity.FATAL);
 
 	enum Severity {
 		FATAL, ERROR, WARNING
