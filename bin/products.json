@@ -1,0 +1,54 @@
+{
+	"CategoryA": [
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		},
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		},
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		}
+	],
+	
+	"CategoryB": [
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		},
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		},
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		}
+	],
+	"CategoryC": [
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		},
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		},
+		{
+			"product-code": "A1234",
+			"product-descrption": "Apparel",
+			"product-price": "1000"
+		}
+	]
+}
