@@ -57,4 +57,12 @@ public class Product {
 		this.productCategory = productCategory;
 	}
 
+	public Product getClonedProduct() {
+		final Product product = new Product();
+		product.setProductCategory(productCategory);
+		product.setProductDescription(productDescription);
+		product.setProductPrice(productPrice);
+		return product;
+	}
+
 }

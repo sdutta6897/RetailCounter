@@ -1,4 +1,4 @@
-package com.retail.engine;
+package com.retail.app;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import com.retail.services.ProductsService;
 import com.retail.services.ReceiptService;
 import com.retail.view.model.ReceiptDetails;
 
-public class ReceiptEngine {
-	private static final Logger logger = LoggerFactory.getLogger(ReceiptEngine.class);
+public class ReceiptApp {
+	private static final Logger logger = LoggerFactory.getLogger(ReceiptApp.class);
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
